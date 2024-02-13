@@ -23,7 +23,7 @@ pipeline {
         stage('Publish Image') {
             steps {
                 script {
-                    docker.withRegistry("https://github.com/951095/docker_manip.git/", registryCredential) {
+                    docker.withRegistry("docker.pkg.github.com/951095/tpdocker:20", registryCredential) {
                         dockerImage.push()
                         dockerImage.push("latest")
                     }
