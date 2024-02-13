@@ -1,6 +1,6 @@
 pipeline {
     environment {
-        registry = "docker.io/951095/tpdocker"
+        registry = "951095/tpdocker"
         registryCredential = 'dockerhub'
         dockerImage = ''
     }
