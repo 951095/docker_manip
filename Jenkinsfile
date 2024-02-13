@@ -1,6 +1,6 @@
 pipeline {
     environment {
-        registry = "951095/tpdocker"
+        registry = "docker.io/951095/tpdocker"
         registryCredential = 'dockerhub'
         dockerImage = ''
     }
@@ -23,7 +23,7 @@ pipeline {
         stage('Publish Image') {
             steps {
                 script {
-                    docker.withRegistry('', registryCredential) {
+                    docker.withRegistry('https://github.com/951095/docker_manip.git', registryCredential) {
                         dockerImage.push()
                         dockerImage.push("latest")
                     }
